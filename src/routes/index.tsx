@@ -184,11 +184,7 @@ function Navigation() {
             </li>
           ))}
           <li>
-            <Button
-              size="sm"
-              className="ml-2"
-              onClick={() => scrollToSection("#contact")}
-            >
+            <Button size="sm" className="ml-2" onClick={() => scrollToSection("#contact")}>
               Contact
             </Button>
           </li>
@@ -203,9 +199,7 @@ function Navigation() {
           </SheetTrigger>
           <SheetContent side="right" className="w-72 border-border bg-background">
             <SheetHeader>
-              <SheetTitle className="font-heading text-left text-lg">
-                Menu
-              </SheetTitle>
+              <SheetTitle className="font-heading text-left text-lg">Menu</SheetTitle>
             </SheetHeader>
             <ul className="mt-8 flex flex-col gap-2">
               {navLinks.map((link) => (
@@ -248,35 +242,21 @@ function Hero() {
         </div>
 
         <h1 className="mt-8 max-w-4xl font-heading text-5xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-6xl md:text-7xl lg:text-8xl">
-          Tintswalo Gift{" "}
-          <span className="gradient-text">Leteane</span>
+          Tintswalo Gift <span className="gradient-text">Leteane</span>
         </h1>
 
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-          Data Engineering & Information Systems Student crafting reliable data pipelines,
-          cloud infrastructure, and intelligent systems.
+          Data Engineering & Information Systems Student crafting reliable data pipelines, cloud
+          infrastructure, and intelligent systems.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button
-            size="lg"
-            onClick={() => scrollToSection("#projects")}
-            className="gap-2"
-          >
+          <Button size="lg" onClick={() => scrollToSection("#projects")} className="gap-2">
             View Projects
             <ArrowDown className="h-4 w-4" />
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            asChild
-            className="gap-2"
-          >
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+          <Button size="lg" variant="outline" asChild className="gap-2">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               GitHub
             </a>
@@ -318,9 +298,8 @@ function About() {
               <p>
                 My academic journey has centred on building resilient{" "}
                 <span className="text-foreground">data pipeline infrastructure</span>, working
-                across cloud environments — especially{" "}
-                <span className="text-foreground">AWS</span> — and designing systems that scale
-                from prototype to production.
+                across cloud environments — especially <span className="text-foreground">AWS</span>{" "}
+                — and designing systems that scale from prototype to production.
               </p>
               <p>
                 Beyond the code, I serve as a{" "}
@@ -341,9 +320,7 @@ function About() {
                     <h3 className="mt-4 font-heading text-lg font-semibold text-card-foreground">
                       Education
                     </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      University of Johannesburg
-                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">University of Johannesburg</p>
                     <p className="text-sm text-muted-foreground">
                       Data Engineering & Information Systems
                     </p>
@@ -491,10 +468,7 @@ function Leadership() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {leadershipRoles.map((role) => (
-            <Card
-              key={role.title}
-              className="card-hover border-border bg-card/80 backdrop-blur-sm"
-            >
+            <Card key={role.title} className="card-hover border-border bg-card/80 backdrop-blur-sm">
               <CardHeader className="pb-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <role.icon className="h-6 w-6" />
@@ -528,9 +502,7 @@ function Contact() {
     const message = formData.get("message") as string;
 
     const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-    );
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
     window.location.href = `mailto:tintswalo.leteane@example.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
@@ -596,11 +568,7 @@ function Contact() {
                   <p className="mt-2 text-muted-foreground">
                     Your default email client should now be open with the message pre-filled.
                   </p>
-                  <Button
-                    variant="outline"
-                    className="mt-6"
-                    onClick={() => setSubmitted(false)}
-                  >
+                  <Button variant="outline" className="mt-6" onClick={() => setSubmitted(false)}>
                     Send another message
                   </Button>
                 </div>

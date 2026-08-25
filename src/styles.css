@@ -147,7 +147,9 @@
 }
 
 @utility glow-border {
-  box-shadow: 0 0 0 1px var(--color-border), 0 0 20px -5px var(--color-glow);
+  box-shadow:
+    0 0 0 1px var(--color-border),
+    0 0 20px -5px var(--color-glow);
 }
 
 @utility hero-glow {
@@ -155,7 +157,9 @@
 }
 
 @utility card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-4px);
