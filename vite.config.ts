@@ -12,4 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    nitro: {
+      // Target Netlify for the self-hosted GitHub + Netlify deployment.
+      preset: "netlify",
+    },
+  },
 });
