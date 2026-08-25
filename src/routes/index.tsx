@@ -256,7 +256,7 @@ function Hero() {
             <ArrowDown className="h-4 w-4" />
           </Button>
           <Button size="lg" variant="outline" asChild className="gap-2">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Leteane7220" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               GitHub
             </a>
@@ -538,7 +538,7 @@ function Contact() {
               </a>
 
               <a
-                href="https://github.com"
+                href="https://github.com/Leteane7220"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/50 hover:bg-card/80"
@@ -548,7 +548,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="font-heading font-semibold text-card-foreground">GitHub</p>
-                  <p className="text-sm text-muted-foreground">@tintswalo-leteane</p>
+                  <p className="text-sm text-muted-foreground">@Leteane7220</p>
                 </div>
                 <ExternalLink className="ml-auto h-4 w-4 text-muted-foreground" />
               </a>
@@ -644,7 +644,7 @@ function Footer() {
             <Linkedin className="h-5 w-5" />
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/Leteane7220"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground transition-colors hover:text-primary"
