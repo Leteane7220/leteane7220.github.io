@@ -361,7 +361,7 @@ function Index() {
                 key={project.title}
                 className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
               >
-                <div className="mb-4 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
+                <div className="mb-4 inline-flex self-start rounded-xl bg-accent/10 p-3 text-accent">
                   {project.icon}
                 </div>
                 <h3 className="mb-2 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
