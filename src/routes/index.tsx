@@ -234,6 +234,8 @@ function Index() {
             </a>
           </div>
 
+          </div>
+
           <a
             href="#about"
             className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-flex flex-col items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
@@ -242,8 +244,7 @@ function Index() {
             <span className="uppercase tracking-widest">Scroll</span>
             <ArrowDown className="h-4 w-4 animate-bounce" />
           </a>
-        </div>
-      </section>
+        </section>
 
       {/* About */}
       <section id="about" className="py-24 md:py-32">
