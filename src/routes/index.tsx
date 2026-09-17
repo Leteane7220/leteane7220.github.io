@@ -522,7 +522,7 @@ function Contact() {
 
             <div className="mt-8 flex flex-col gap-4">
               <a
-                href="https://www.linkedin.com/in/tintswalo-leteane"
+                href="https://www.linkedin.com/in/tintswalo-leteane-451832317"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/50 hover:bg-card/80"
@@ -635,7 +635,7 @@ function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <a
-            href="https://www.linkedin.com/in/tintswalo-leteane"
+            href="https://www.linkedin.com/in/tintswalo-leteane-451832317"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground transition-colors hover:text-primary"
