@@ -11,9 +11,14 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
+    // Fully prerender the routes to static HTML so the site can be hosted on
+    // GitHub Pages (static hosting, no server runtime needed).
+    prerender: {
+      enabled: true,
+      crawlLinks: true,
+    },
   },
-  // Target Netlify for the self-hosted GitHub + Netlify deployment.
-  nitro: {
-    preset: "netlify",
-  },
+  // No nitro server bundle: the deployment target (GitHub Pages) only serves
+  // the static client output.
+  nitro: false,
 });
