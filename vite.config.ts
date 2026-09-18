@@ -11,11 +11,10 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-  },
-  // Target GitHub Pages: fully static output (no server runtime needed — this
-  // portfolio is a single static page with a mailto contact form).
-  // The Lovable sandbox forces its own preset; GitHub Actions CI honors this.
-  nitro: {
-    preset: "static",
+    // SPA mode: prerender a static shell so the site can be hosted on
+    // GitHub Pages (static hosting, no server runtime needed).
+    spa: {
+      enabled: true,
+    },
   },
 });
