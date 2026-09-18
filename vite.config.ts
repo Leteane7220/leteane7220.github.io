@@ -17,4 +17,7 @@ export default defineConfig({
       enabled: true,
     },
   },
+  // No nitro server bundle: the deployment target (GitHub Pages) only serves
+  // the static client output.
+  nitro: false,
 });
