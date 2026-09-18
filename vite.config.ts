@@ -14,10 +14,8 @@ export default defineConfig({
   },
   // Target GitHub Pages: fully static output (no server runtime needed — this
   // portfolio is a single static page with a mailto contact form).
+  // The Lovable sandbox forces its own preset; GitHub Actions CI honors this.
   nitro: {
     preset: "static",
-    output: {
-      publicDir: "dist",
-    },
   },
 });
