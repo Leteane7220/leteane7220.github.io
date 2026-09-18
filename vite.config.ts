@@ -12,8 +12,12 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Target Netlify for the self-hosted GitHub + Netlify deployment.
+  // Target GitHub Pages: fully static output (no server runtime needed — this
+  // portfolio is a single static page with a mailto contact form).
   nitro: {
-    preset: "netlify",
+    preset: "static",
+    output: {
+      publicDir: "dist",
+    },
   },
 });
