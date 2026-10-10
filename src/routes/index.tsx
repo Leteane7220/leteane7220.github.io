@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import gothamImage from "@/assets/gotham.jpg";
 import {
   ArrowDown,
   Award,
@@ -127,15 +129,15 @@ function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="portfolio min-h-screen bg-background text-foreground">
       {/* Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
         <nav className="container mx-auto flex h-16 items-center justify-between px-4">
           <a
             href="#"
-            className="text-lg font-bold tracking-tight text-foreground hover:text-primary transition-colors"
+            className="text-lg font-bold tracking-normal text-foreground hover:text-primary transition-colors"
           >
-            T.G. Leteane
+            TGL / PORTFOLIO
           </a>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -150,13 +152,14 @@ function Index() {
             ))}
           </div>
 
-          <button
+          <Button
+            variant="ghost" size="icon" aria-expanded={menuOpen}
             className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-accent hover:text-foreground transition-colors md:hidden"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
             {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          </Button>
         </nav>
 
         {menuOpen && (
@@ -176,82 +179,31 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section
-        id="hero"
-        className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16"
-      >
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -top-1/4 -right-1/4 h-[600px] w-[600px] rounded-full bg-primary/20 blur-[120px]" />
-          <div className="absolute -bottom-1/4 -left-1/4 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[100px]" />
+      <section id="hero" className="gotham-hero">
+        <img src={gothamImage} alt="A monochrome gothic city skyline beneath a night-time searchlight" width={1920} height={1024} fetchPriority="high" className="gotham-backdrop" />
+        <div className="hero-shade" />
+        <div className="hero-content">
+          <p className="eyebrow">JOHANNESBURG, SOUTH AFRICA / UJ</p>
+          <h1>TINTSWALO<br />GIFT LETEANE<span className="hero-period">.</span></h1>
+          <p className="hero-role">Data Engineering &amp; Information Systems</p>
+          <p className="hero-description">Building data pipelines, exploring cloud infrastructure,<br className="hidden md:block" /> and making sense of complex systems.</p>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button asChild size="lg" className="hero-cta"><a href="#projects">Explore my work <ArrowDown /></a></Button>
+            <Button asChild variant="link" className="hero-contact"><a href="#contact">Get in touch <Mail /></a></Button>
+          </div>
         </div>
-
-        <div className="relative container mx-auto px-4 text-center">
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/50 px-4 py-1.5 backdrop-blur-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-            </span>
-            <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-              University of Johannesburg
-            </span>
-          </div>
-
-          <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-7xl">
-            Tintswalo Gift{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Leteane
-            </span>
-          </h1>
-
-          <p className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            Data Engineering & Information Systems Student building scalable data pipelines,
-            cloud infrastructure, and systems that turn raw information into insight.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:shadow-primary/30"
-            >
-              <Code className="h-4 w-4" />
-              View Projects
-            </a>
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/50 hover:text-primary"
-            >
-              <Github className="h-4 w-4" />
-              GitHub
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-all hover:bg-accent/90"
-            >
-              <Mail className="h-4 w-4" />
-              Contact Me
-            </a>
-          </div>
-
-          </div>
-
-          <a
-            href="#about"
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-flex flex-col items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
-            aria-label="Scroll to about section"
-          >
-            <span className="uppercase tracking-widest">Scroll</span>
-            <ArrowDown className="h-4 w-4 animate-bounce" />
-          </a>
-        </section>
+        <div className="bat-signal" aria-hidden="true">
+          <svg viewBox="0 0 200 80" fill="currentColor"><path d="M0 8C25 17 43 19 63 28L77 24L82 7L92 20H108L118 7L123 24L137 28C157 19 175 17 200 8L179 37L156 34L145 54L122 48L100 78L78 48L55 54L44 34L21 37Z" /></svg>
+        </div>
+        <div className="hero-baseline"><span>DATA. SYSTEMS. PURPOSE.</span><a href="#about" aria-label="Scroll to about section">01 / THE PERSON BEHIND THE WORK <ArrowDown className="h-4 w-4" /></a></div>
+      </section>
 
       {/* About */}
       <section id="about" className="py-24 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              About Me
+            <h2 className="mb-6 text-3xl font-bold tracking-normal text-foreground sm:text-4xl">
+              Behind the work
             </h2>
             <p className="mb-12 text-lg text-muted-foreground">
               I am currently pursuing my studies in Data Engineering and Information Systems at
@@ -263,8 +215,8 @@ function Index() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-              <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 text-primary">
+            <div className="rounded-sm border border-border bg-card p-6 transition-all hover:border-primary/30 ">
+              <div className="mb-4 inline-flex rounded-sm bg-primary/10 p-3 text-primary">
                 <Database className="h-6 w-6" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-foreground">
@@ -276,8 +228,8 @@ function Index() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-              <div className="mb-4 inline-flex rounded-xl bg-accent/10 p-3 text-accent">
+            <div className="rounded-sm border border-border bg-card p-6 transition-all hover:border-primary/30 ">
+              <div className="mb-4 inline-flex rounded-sm bg-accent/10 p-3 text-accent">
                 <Cloud className="h-6 w-6" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-foreground">Cloud Environments</h3>
@@ -287,8 +239,8 @@ function Index() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-              <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 text-primary">
+            <div className="rounded-sm border border-border bg-card p-6 transition-all hover:border-primary/30 ">
+              <div className="mb-4 inline-flex rounded-sm bg-primary/10 p-3 text-primary">
                 <Users className="h-6 w-6" />
               </div>
               <h3 className="mb-2 text-lg font-semibold text-foreground">
@@ -307,8 +259,8 @@ function Index() {
       <section id="skills" className="bg-muted/30 py-24 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Technical Skills
+            <h2 className="mb-4 text-3xl font-bold tracking-normal text-foreground sm:text-4xl">
+              The toolkit
             </h2>
             <p className="text-muted-foreground">
               A growing toolkit focused on data engineering, cloud infrastructure, and systems
@@ -320,9 +272,9 @@ function Index() {
             {skillGroups.map((group) => (
               <div
                 key={group.title}
-                className="rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                className="rounded-sm border border-border bg-card p-6 transition-all hover:border-primary/30 "
               >
-                <div className="mb-4 inline-flex rounded-xl bg-primary/10 p-3 text-primary">
+                <div className="mb-4 inline-flex rounded-sm bg-primary/10 p-3 text-primary">
                   {group.icon}
                 </div>
                 <h3 className="mb-4 text-xl font-semibold text-foreground">{group.title}</h3>
@@ -330,7 +282,7 @@ function Index() {
                   {group.skills.map((skill) => (
                     <li
                       key={skill}
-                      className="rounded-full border border-border bg-background px-3 py-1 text-sm font-medium text-muted-foreground"
+                      className="rounded-sm border border-border bg-background px-3 py-1 text-sm font-medium text-muted-foreground"
                     >
                       {skill}
                     </li>
@@ -346,8 +298,8 @@ function Index() {
       <section id="projects" className="py-24 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Featured Projects
+            <h2 className="mb-4 text-3xl font-bold tracking-normal text-foreground sm:text-4xl">
+              Selected work
             </h2>
             <p className="text-muted-foreground">
               Selected work that demonstrates data pipelines, systems thinking, and cloud
@@ -359,9 +311,9 @@ function Index() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                className="group flex flex-col rounded-sm border border-border bg-card p-6 transition-all hover:border-primary/30 "
               >
-                <div className="mb-4 inline-flex self-start rounded-xl bg-accent/10 p-3 text-accent">
+                <div className="mb-4 inline-flex self-start rounded-sm bg-accent/10 p-3 text-accent">
                   {project.icon}
                 </div>
                 <h3 className="mb-2 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
@@ -374,7 +326,7 @@ function Index() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                      className="rounded-sm bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
                     >
                       {tag}
                     </span>
@@ -390,8 +342,8 @@ function Index() {
       <section id="leadership" className="bg-muted/30 py-24 md:py-32">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-16 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Leadership & Community
+            <h2 className="mb-4 text-3xl font-bold tracking-normal text-foreground sm:text-4xl">
+              Beyond the code
             </h2>
             <p className="text-muted-foreground">
               Beyond the classroom, I invest in peer learning and community engagement.
@@ -402,9 +354,9 @@ function Index() {
             {leadership.map((item) => (
               <div
                 key={item.title}
-                className="flex flex-col rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                className="flex flex-col rounded-sm border border-border bg-card p-8 transition-all hover:border-primary/30 "
               >
-                <div className="mb-4 inline-flex self-start rounded-xl bg-primary/10 p-3 text-primary">
+                <div className="mb-4 inline-flex self-start rounded-sm bg-primary/10 p-3 text-primary">
                   {item.icon}
                 </div>
                 <h3 className="mb-1 text-xl font-semibold text-foreground">{item.title}</h3>
@@ -421,8 +373,8 @@ function Index() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                Get In Touch
+              <h2 className="mb-4 text-3xl font-bold tracking-normal text-foreground sm:text-4xl">
+                Let’s connect
               </h2>
               <p className="text-muted-foreground">
                 Have a question, opportunity, or just want to connect? Send a message.
@@ -475,12 +427,12 @@ function Index() {
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>
-              <button
+              <Button
                 type="submit"
                 className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/90 hover:shadow-primary/30"
               >
                 Send Message
-              </button>
+              </Button>
               {formStatus === "success" && (
                 <p className="text-center text-sm font-medium text-accent">
                   Thanks for reaching out! I&apos;ll get back to you soon.
@@ -527,7 +479,7 @@ function Index() {
           </div>
 
           <div className="mt-8 text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Tintswalo Gift Leteane. Built with care.
+            © {new Date().getFullYear()} Tintswalo Gift Leteane. Johannesburg, South Africa.
           </div>
         </div>
       </footer>
