@@ -8,3 +8,7 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Portfolio presentation
+- Keep the single-page portfolio's section links and existing content together in the index route; this preserves smooth in-page navigation.
+- Define the cinematic monochrome palette and editorial type styles in global CSS tokens; this keeps all sections and controls visually consistent.
