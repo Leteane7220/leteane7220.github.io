@@ -34,6 +34,11 @@ jobs:
       - name: Build the static site
         run: bun run build
 
+      # GitHub Pages answers unknown URLs with 404.html — point it at the
+      # portfolio so any link lands on the site instead of an error page.
+      - name: Route unknown URLs to the portfolio
+        run: cp dist/client/index.html dist/client/404.html
+
       - name: Upload the built site to Pages
         uses: actions/upload-pages-artifact@v3
         with:
