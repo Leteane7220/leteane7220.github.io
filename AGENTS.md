@@ -12,3 +12,7 @@
 ## Portfolio presentation
 - Keep the single-page portfolio's section links and existing content together in the index route; this preserves smooth in-page navigation.
 - Define the cinematic monochrome palette and editorial type styles in global CSS tokens; this keeps all sections and controls visually consistent.
+
+## Deployment target
+- Keep the index route prerendered to static HTML and the single Pages publish step in `.github/workflows/deploy.yml`; this lets the portfolio be hosted on a static host (GitHub Pages) without a server runtime.
+
