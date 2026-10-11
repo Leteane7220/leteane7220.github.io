@@ -30,19 +30,23 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      # Prerenders "/" into dist/client/index.html (see vite.config.ts).
+      # Prerenders "/" into a static index.html (see vite.config.ts).
       - name: Build the static site
         run: bun run build
 
+      # The static output lands in dist/client or .output/public depending on
+      # the build toolchain version — normalize it into ./site either way.
       # GitHub Pages answers unknown URLs with 404.html — point it at the
       # portfolio so any link lands on the site instead of an error page.
-      - name: Route unknown URLs to the portfolio
-        run: cp dist/client/index.html dist/client/404.html
+      - name: Prepare the site for Pages
+        run: |
+          if [ -d dist/client ]; then cp -r dist/client site; else cp -r .output/public site; fi
+          cp site/index.html site/404.html
 
       - name: Upload the built site to Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: site
 
   deploy:
     needs: build
