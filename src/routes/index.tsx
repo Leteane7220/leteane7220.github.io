@@ -5,17 +5,13 @@ import gothamImage from "@/assets/gotham.jpg";
 import {
   ArrowDown,
   Award,
-  Box,
   Cloud,
-  Code,
   Database,
   Github,
   Layers,
   Linkedin,
   Mail,
   Menu,
-  Server,
-  ShieldCheck,
   Users,
   X,
   Zap,
@@ -76,25 +72,12 @@ const skillGroups = [
 
 const projects = [
   {
-    title: "Weather Data Pipeline",
+    title: "Load-Shedding Grid Impact Analyzer",
+    period: "Jun 2026 – Jul 2026",
     description:
-      "A Python script that taps into external web APIs to automate weather data ingestion, transformation, and storage for downstream analytics.",
-    tags: ["Python", "APIs", "Data Ingestion"],
+      "An event-driven, fully serverless data pipeline on AWS that ingests and analyzes grid data around load-shedding schedule changes and power disruptions. S3 bucket triggers invoke Lambda functions instantly whenever new grid payloads land, parsing raw JSON and CSV telemetry in real time to calculate peak outages, duration metrics, and regional grid impact. Version-controlled and hosted on GitHub for clean deployment and pipeline iteration.",
+    tags: ["AWS S3", "AWS Lambda", "Serverless", "JSON & CSV Parsing", "GitHub"],
     icon: <Zap className="h-6 w-6" />,
-  },
-  {
-    title: "Logistics & Inventory Tracking System",
-    description:
-      "An infrastructure proposal for tracking corridor assets across South Africa, designed to improve visibility and operational efficiency in logistics networks.",
-    tags: ["System Design", "Enterprise Architecture", "Inventory Tracking"],
-    icon: <Box className="h-6 w-6" />,
-  },
-  {
-    title: "Blockchain Credential Verification",
-    description:
-      "A proof-of-concept SQL and AWS pipeline for indexing smart contracts and verifying credential authenticity on-chain.",
-    tags: ["SQL", "AWS", "Blockchain", "Smart Contracts"],
-    icon: <ShieldCheck className="h-6 w-6" />,
   },
 ];
 
@@ -307,7 +290,7 @@ function Index() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr))]">
             {projects.map((project) => (
               <article
                 key={project.title}
@@ -316,9 +299,14 @@ function Index() {
                 <div className="mb-4 inline-flex self-start rounded-sm bg-accent/10 p-3 text-accent">
                   {project.icon}
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
+                <h3 className="mb-1 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
                   {project.title}
                 </h3>
+                {project.period && (
+                  <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                    {project.period}
+                  </p>
+                )}
                 <p className="mb-6 flex-1 text-sm text-muted-foreground">
                   {project.description}
                 </p>
