@@ -12,7 +12,6 @@ import {
   Linkedin,
   Mail,
   Menu,
-  Server,
   Users,
   X,
   Zap,
