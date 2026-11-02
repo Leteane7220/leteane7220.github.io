@@ -76,25 +76,12 @@ const skillGroups = [
 
 const projects = [
   {
-    title: "Weather Data Pipeline",
+    title: "Load-Shedding Grid Impact Analyzer",
+    period: "Jun 2026 – Jul 2026",
     description:
-      "A Python script that taps into external web APIs to automate weather data ingestion, transformation, and storage for downstream analytics.",
-    tags: ["Python", "APIs", "Data Ingestion"],
+      "An event-driven, fully serverless data pipeline on AWS that ingests and analyzes grid data around load-shedding schedule changes and power disruptions. S3 bucket triggers invoke Lambda functions instantly whenever new grid payloads land, parsing raw JSON and CSV telemetry in real time to calculate peak outages, duration metrics, and regional grid impact. Version-controlled and hosted on GitHub for clean deployment and pipeline iteration.",
+    tags: ["AWS S3", "AWS Lambda", "Serverless", "JSON & CSV Parsing", "GitHub"],
     icon: <Zap className="h-6 w-6" />,
-  },
-  {
-    title: "Logistics & Inventory Tracking System",
-    description:
-      "An infrastructure proposal for tracking corridor assets across South Africa, designed to improve visibility and operational efficiency in logistics networks.",
-    tags: ["System Design", "Enterprise Architecture", "Inventory Tracking"],
-    icon: <Box className="h-6 w-6" />,
-  },
-  {
-    title: "Blockchain Credential Verification",
-    description:
-      "A proof-of-concept SQL and AWS pipeline for indexing smart contracts and verifying credential authenticity on-chain.",
-    tags: ["SQL", "AWS", "Blockchain", "Smart Contracts"],
-    icon: <ShieldCheck className="h-6 w-6" />,
   },
 ];
 
