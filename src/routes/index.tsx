@@ -5,9 +5,7 @@ import gothamImage from "@/assets/gotham.jpg";
 import {
   ArrowDown,
   Award,
-  Box,
   Cloud,
-  Code,
   Database,
   Github,
   Layers,
@@ -15,7 +13,6 @@ import {
   Mail,
   Menu,
   Server,
-  ShieldCheck,
   Users,
   X,
   Zap,
@@ -303,9 +300,14 @@ function Index() {
                 <div className="mb-4 inline-flex self-start rounded-sm bg-accent/10 p-3 text-accent">
                   {project.icon}
                 </div>
-                <h3 className="mb-2 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
+                <h3 className="mb-1 text-xl font-semibold text-foreground transition-colors group-hover:text-primary">
                   {project.title}
                 </h3>
+                {project.period && (
+                  <p className="mb-4 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                    {project.period}
+                  </p>
+                )}
                 <p className="mb-6 flex-1 text-sm text-muted-foreground">
                   {project.description}
                 </p>
