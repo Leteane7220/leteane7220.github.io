@@ -1,1 +1,1 @@
-- [ ] Add the Tinewe safety journey project to the portfolio using the supplied LinkedIn details.
+- [x] Add the Tinewe safety journey project to the portfolio using the supplied LinkedIn details.
