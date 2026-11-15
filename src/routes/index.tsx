@@ -12,6 +12,7 @@ import {
   Linkedin,
   Mail,
   Menu,
+  ShieldCheck,
   Users,
   X,
   Zap,
@@ -78,6 +79,13 @@ const projects = [
       "An event-driven, fully serverless data pipeline on AWS that ingests and analyzes grid data around load-shedding schedule changes and power disruptions. S3 bucket triggers invoke Lambda functions instantly whenever new grid payloads land, parsing raw JSON and CSV telemetry in real time to calculate peak outages, duration metrics, and regional grid impact. Version-controlled and hosted on GitHub for clean deployment and pipeline iteration.",
     tags: ["AWS S3", "AWS Lambda", "Serverless", "JSON & CSV Parsing", "GitHub"],
     icon: <Zap className="h-6 w-6" />,
+  },
+  {
+    title: "Tinewe — Safe Journey",
+    description:
+      "A team-built safety journey app focused on discreet, end-to-end protection while travelling. It recommends safer routes and tracks movement with check-ins, shares live location with trusted contacts, and confirms safe arrival. Emergency support includes one-tap SOS, emergency speed dial, fake calls, transport verification, and automated low-battery alerts. A disguised interface helps protect privacy, with offline access, local support resources, traffic notifications, and a personal safety plan.",
+    tags: ["Journey Safety", "Live Location", "Emergency SOS", "Discreet Support", "Transport Verification"],
+    icon: <ShieldCheck className="h-6 w-6" />,
   },
 ];
 
